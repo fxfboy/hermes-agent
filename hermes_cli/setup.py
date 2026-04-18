@@ -2981,7 +2981,7 @@ def _offer_launch_chat():
         print_info("Could not relaunch Hermes automatically. Run 'hermes chat' manually.")
         return
 
-    os.execvp(chat_argv[0], chat_argv)
+    subprocess.Popen(chat_argv, start_new_session=True)
 
 
 def _run_first_time_quick_setup(config: dict, hermes_home, is_existing: bool):
